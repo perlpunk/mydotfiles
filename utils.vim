@@ -30,6 +30,25 @@ map <F4> gt
 " open file under cursor in new tab
 map <F2> :tabedit <cfile><CR>
 
+" split
+
+nnoremap <leader>w <C-w>v<C-w>l
+
+" use ctrl-h and ctrl-l to jump between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+
+" ----- git -----
+" Get the commit responsible for the current line
+nmap <f5> :call BlameCurrentLine()<cr>
+" Get the current line number & file name, view the git commit that inserted it
+fun! BlameCurrentLine()
+let lnum = line(".")
+let file = @%
+exec "!gitblame.pl " lnum file
+endfun
+
 
 " remember where I was
 autocmd BufReadPost *
