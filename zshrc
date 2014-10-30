@@ -1,7 +1,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
-setopt appendhistory autocd notify
+setopt appendhistory autocd notify promptsubst
 unsetopt beep extendedglob nomatch
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -14,9 +14,10 @@ promptinit
 # display menu when using completion
 zstyle ':completion:*' menu select
 # user@host:dir
-PROMPT='%n@%m%:%/$ '
+#PROMPT='%n@%m% :%~$ '
+PROMPT="\$(git branch 2>/dev/null |sed 's@^\* \(.\+\)@[\1] @;tn;d;:n')\${PERLBREW_PERL:+[\$PERLBREW_PERL] }%n@%m% :%~$ "
 # colored
-PROMPT="%F{blue}%B%K{blue}█▓▒░%F{white}%K{blue}%B%n@%m%b%F{blue}%K{black}█▓▒░%F{white}%K{black}%B%}%K{black}:%B%~$ %b%k%f"
+#PROMPT="%F{blue}%B%K{blue}█▓▒░%F{white}%K{blue}%B%n@%m%b%F{blue}%K{black}█▓▒░%F{white}%K{black}%B%}%K{black}:%B%~$ %b%k%f"
 # don't remove trailing slash from completion
 unsetopt AUTO_REMOVE_SLASH
 
