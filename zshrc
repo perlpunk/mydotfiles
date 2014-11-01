@@ -22,3 +22,27 @@ PROMPT="\$(git branch 2>/dev/null |sed 's@^\* \(.\+\)@[\1] @;tn;d;:n')\${PERLBRE
 unsetopt AUTO_REMOVE_SLASH
 
 alias ll="ls -lrt"
+
+# thanks to ANDK
+_vc_prompt () {
+    local GITDIRTY
+    local GITPROMPT
+    local GITSTATUS
+    if [ -d .git -o -d ../.git -o -d ../../.git -o -d ../../../.git ] ; then
+        if GITBRANCH=`git branch -a | grep '^\*' | sed 's,\*[ ]*,,'` ; then
+            GITSTATUS=`git status --porcelain --untracked-files=no`
+            if [ -z $GITSTATUS ] ; then
+                GITDIRTY=""
+            else
+                GITDIRTY="*"
+            fi
+            GITPROMPT="[$GITBRANCH$GITDIRTY]"
+        else
+            GITPROMPT="[]"
+        fi
+    else
+        GITPROMPT=""
+    fi
+    echo $GITPROMPT
+}
+
