@@ -1,8 +1,13 @@
 HISTFILE=~/.zsh_history
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=100000
+setopt EXTENDED_HISTORY
+unsetopt SHARE_HISTORY
 setopt appendhistory autocd notify promptsubst
 unsetopt beep extendedglob nomatch
+alias dh='dirs -v'
+DIRSTACKSIZE=20
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 # Use modern completion system
