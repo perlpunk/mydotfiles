@@ -7,6 +7,7 @@ setopt appendhistory autocd notify promptsubst
 unsetopt beep extendedglob nomatch
 alias dh='dirs -v'
 DIRSTACKSIZE=20
+setopt AUTOPUSHD
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
