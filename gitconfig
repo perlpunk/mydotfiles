@@ -1,0 +1,29 @@
+# vim:set ft=gitconfig #
+# include like:
+# [include]
+#   path = mydotfiles/gitconfig
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[core]
+  editor = vim
+[alias]
+  ci = commit
+  di = diff
+  last = log -1 HEAD
+  st = status
+  co = checkout
+  lg = log -p
+  glog = log --graph --decorate --all
+  br = branch
+  # commit count by author
+  who = shortlog -s -n
+  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+
+# add parts of files
+# git add -p ...
+
+# git log --date=relative
+
