@@ -44,7 +44,8 @@ set smartcase
 set showmatch
 
 set list
-set listchars=tab:▸\ ,eol:¬,trail:·
+"set listchars=tab:▸\ ,eol:¬,trail:·
+set listchars=tab:▸\ ,trail:·
 
 " for copy & paste: deactivate line numbers and invisible chars:
 map <silent> <leader>sl :set relativenumber<CR>:set list<CR>
