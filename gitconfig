@@ -22,9 +22,11 @@
   # commit count by author
   who = shortlog -s -n
   graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+  # ovid++
+  stashed = "stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
 
 [push]
-  default = simple
+#  default = simple
 
 
 # add parts of files
