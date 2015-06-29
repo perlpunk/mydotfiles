@@ -14,7 +14,7 @@
   ci = commit
   di = diff
   last = log -1 HEAD
-  st = status
+  st = status -s
   co = checkout
   lg = log -p
   glog = log --graph --decorate --all
