@@ -29,8 +29,12 @@
 [push]
 #  default = simple
 
+[url "ssh://git@github.com/"]
+  insteadOf = gh://
 
 # add parts of files
 # git add -p ...
 
 # git log --date=relative
+
+# alias myclone="git clone --config user.email 'foo@example.org'"
