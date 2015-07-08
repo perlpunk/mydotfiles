@@ -57,4 +57,4 @@ autocmd BufReadPost *
 \         exe "normal g'\"" |
 \     endif |
 
-
+let g:netrw_liststyle=1
