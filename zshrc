@@ -1,6 +1,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
+setopt histignorealldups
 setopt EXTENDED_HISTORY
 unsetopt SHARE_HISTORY
 setopt appendhistory autocd notify promptsubst
@@ -8,6 +9,8 @@ unsetopt beep extendedglob nomatch
 alias dh='dirs -v'
 DIRSTACKSIZE=20
 setopt AUTOPUSHD
+
+autoload -U colors && colors
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -58,3 +61,24 @@ foreground-vi() {
 }
 zle -N foreground-vi
 bindkey '^Z' foreground-vi
+
+
+# http://stackoverflow.com/a/844299
+expand-or-complete-with-dots() {
+  echo -n "\e[31m...\e[0m"
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
+
+alias alias ltr='ls -ltr'
+alias ls='ls --color'
+alias l='ls -lh'
+alias ll='ls -la'
+
+for c in cp rm chmod chown rename; do
+    alias $c="$c -v"
+done
+
+alias -g L="|less"
