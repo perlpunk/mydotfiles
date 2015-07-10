@@ -22,11 +22,23 @@ promptinit
 
 # display menu when using completion
 zstyle ':completion:*' menu select
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # user@host:dir
 #PROMPT='%n@%m% :%~$ '
-PROMPT="\$(git branch 2>/dev/null |sed 's@^\* \(.\+\)@[\1] @;tn;d;:n')\${PERLBREW_PERL:+[\$PERLBREW_PERL] }%n@%m% :%~$ "
+PERLBREW_PROMPT='${PERLBREW_PERL:+[$PERLBREW_PERL]}'
+THE_COLOR="[1;31m"
+PS1=$'%{\e'$THE_COLOR$'%}'%n@%m:%~'`_vc_prompt`'%#$'%{\e[0m%} '
+#PROMPT="\$(git branch 2>/dev/null |sed 's@^\* \(.\+\)@[\1] @;tn;d;:n')\${PERLBREW_PERL:+[\$PERLBREW_PERL] }%n@%m% :%~$ "
 # colored
 #PROMPT="%F{blue}%B%K{blue}█▓▒░%F{white}%K{blue}%B%n@%m%b%F{blue}%K{black}█▓▒░%F{white}%K{black}%B%}%K{black}:%B%~$ %b%k%f"
+function get_nr_jobs() {
+  jobs | wc -l
+}
+
+RPROMPT="%{$fg_bold[cyan]%}$PERLBREW_PROMPT"'%{$fg_bold[red]%}[$(get_nr_jobs)] %{$fg_bold[green]%}%*%{$reset_color%}'
+
+
 # don't remove trailing slash from completion
 unsetopt AUTO_REMOVE_SLASH
 
