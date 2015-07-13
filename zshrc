@@ -24,6 +24,10 @@ promptinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+
+[ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
+zstyle ':completion:*:hosts' hosts $_ssh_config
+
 # user@host:dir
 #PROMPT='%n@%m% :%~$ '
 PERLBREW_PROMPT='${PERLBREW_PERL:+[$PERLBREW_PERL]}'
