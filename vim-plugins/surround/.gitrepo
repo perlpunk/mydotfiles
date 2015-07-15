@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:vim-scripts/surround.vim.git
+	branch = master
+	commit = 324a8735bb82193a1a413e207dc1aaf60f3a1d82
+	parent = cc88c32acbdb1c56216c1ea8bb1c7de6815da59a
+	cmdver = 0.2.1
