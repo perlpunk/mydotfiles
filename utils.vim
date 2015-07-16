@@ -58,3 +58,14 @@ autocmd BufReadPost *
 \     endif |
 
 let g:netrw_liststyle=1
+
+map <c-j> <c-w>j<c-w><Esc>
+map <c-k> <c-w>k<c-w><Esc>
+map <c-l> <c-w>l<c-w><Esc>
+map <c-h> <c-w>h<c-w><Esc>
+
+nnoremap gb :ls<CR>:b 
+
+set wildmenu
+set wildignorecase
+set wildmode=list:longest,full

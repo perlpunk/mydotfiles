@@ -16,6 +16,8 @@ set sws=4
 
 set modeline
 
+" highlight while typing
+set incsearch
 " highlight search
 set hls
 
