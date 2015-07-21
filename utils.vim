@@ -69,3 +69,6 @@ nnoremap gb :ls<CR>:b
 set wildmenu
 set wildignorecase
 set wildmode=list:longest,full
+
+autocmd FileType perl setlocal commentstring=#%s
+
