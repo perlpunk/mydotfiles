@@ -25,6 +25,13 @@
   # ovid++
   stashed = "stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
   brv = "branch -avv"
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
+  lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+  ld = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+  f = "!git ls-files | grep -i"
+  la = "!git config -l | grep alias | cut -c 7-"
 
 [push]
 #  default = simple
@@ -38,3 +45,8 @@
 # git log --date=relative
 
 # alias myclone="git clone --config user.email 'foo@example.org'"
+# git rev-parse --show-toplevel
+# git push origin --delete <branchName> # v1.7.0
+# git config --global core.pager 'less -r'
+
+# http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
