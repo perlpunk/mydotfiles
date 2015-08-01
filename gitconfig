@@ -16,7 +16,7 @@
   last = log -1 HEAD
   st = status -sb
   co = checkout
-  lg = log -p
+  lp = log -p
   glog = log --graph --decorate --all
   br = branch
   # commit count by author
@@ -28,6 +28,8 @@
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
   lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+  lga = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph --all
+  lg = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph
   ld = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=relative
   le = log --oneline --decorate
   f = "!git ls-files | grep -i"
