@@ -1,12 +1,12 @@
 " reload vimrc
-map <C-J> :source ~/.vimrc<CR>
+nnoremap <C-J> :source ~/.vimrc<CR>
 
 " leave vim
-map Q :q<CR>
+nnoremap Q :q<CR>
 
 " save
 " CTRL-C
-map <C-C> :w<CR>
+nnoremap <C-C> :w<CR>
 " same in insert mode
 imap <C-C> <ESC>:w<CR>
 
@@ -21,22 +21,13 @@ set pastetoggle=<F10>
 
 " open a new tab
 " CTRL-T:
-map <C-T> :tabnew<CR>
+nnoremap <C-T> :tabnew<CR>
 
 " Change to tab left/right
-map <F3> gT
-map <F4> gt
+nnoremap <F3> gT
+nnoremap <F4> gt
 
-" open file under cursor in new tab
-map <F2> :tabedit <cfile><CR>
 
-" split
-
-nnoremap <leader>w <C-w>v<C-w>l
-
-" use ctrl-h and ctrl-l to jump between splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 
 " ----- git -----
@@ -59,10 +50,13 @@ autocmd BufReadPost *
 
 let g:netrw_liststyle=1
 
-map <c-j> <c-w>j<c-w><Esc>
-map <c-k> <c-w>k<c-w><Esc>
-map <c-l> <c-w>l<c-w><Esc>
-map <c-h> <c-w>h<c-w><Esc>
+" split
+nnoremap <leader>w <C-w>v<C-w>l
+" use ctrl-h,j,k,l to jump between splits
+nnoremap <c-j> <c-w>j<c-w><Esc>
+nnoremap <c-k> <c-w>k<c-w><Esc>
+nnoremap <c-l> <c-w>l<c-w><Esc>
+nnoremap <c-h> <c-w>h<c-w><Esc>
 
 nnoremap gb :ls<CR>:b 
 
