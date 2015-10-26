@@ -28,6 +28,7 @@ nnoremap <F3> gT
 nnoremap <F4> gt
 
 
+set backspace=indent,eol,start
 
 
 " ----- git -----
