@@ -38,7 +38,9 @@ set scrolloff=3
 set wildmenu
 set wildmode=list:longest
 
+" show relative line numbers, but show the current real line number
 set relativenumber
+set number
 
 set ignorecase
 set smartcase
