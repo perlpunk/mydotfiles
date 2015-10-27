@@ -40,7 +40,9 @@ set wildmode=list:longest
 
 " show relative line numbers, but show the current real line number
 set relativenumber
-set number
+if version >= 704
+    set number
+endif
 
 set ignorecase
 set smartcase
