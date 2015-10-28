@@ -67,3 +67,5 @@ set wildmode=list:longest,full
 
 autocmd FileType perl setlocal commentstring=#%s
 
+" edit file in same directory
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
