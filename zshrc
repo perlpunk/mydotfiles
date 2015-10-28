@@ -25,9 +25,12 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
+# read host completion from ~/.ssh/config
 [ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
 zstyle ':completion:*:hosts' hosts $_ssh_config
 
+
+# ---------- PROMPT ------------
 # user@host:dir
 #PROMPT='%n@%m% :%~$ '
 PERLBREW_PROMPT='${PERLBREW_PERL:+[$PERLBREW_PERL]}'
@@ -42,11 +45,6 @@ function get_nr_jobs() {
 
 RPROMPT="%{$fg_bold[cyan]%}$PERLBREW_PROMPT"'%{$fg_bold[red]%}[$(get_nr_jobs)] %{$fg_bold[green]%}%*%{$reset_color%}'
 
-
-# don't remove trailing slash from completion
-unsetopt AUTO_REMOVE_SLASH
-
-alias ll="ls -lrt"
 
 # thanks to ANDK
 _vc_prompt () {
@@ -71,6 +69,11 @@ _vc_prompt () {
     echo $GITPROMPT
 }
 
+# ------------ MISC ------------
+# don't remove trailing slash from completion
+unsetopt AUTO_REMOVE_SLASH
+
+# use ctrl-z not only for putting vim in background but also for getting back
 # http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 foreground-vi() {
   fg %vi
@@ -79,6 +82,7 @@ zle -N foreground-vi
 bindkey '^Z' foreground-vi
 
 
+# show red dots, so when completion takes long yoyu see that something's happening
 # http://stackoverflow.com/a/844299
 expand-or-complete-with-dots() {
   echo -n "\e[31m...\e[0m"
