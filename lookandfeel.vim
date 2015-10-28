@@ -22,7 +22,7 @@ set incsearch
 set hls
 
 " where am I
-set cul
+set cursorline
 set ruler
 set showmode
 
@@ -49,6 +49,9 @@ set smartcase
 
 set showmatch
 
+" show cmd in status bar
+set showcmd
+
 set list
 "set listchars=tab:▸\ ,eol:¬,trail:·
 set listchars=tab:▸\ ,trail:·
@@ -57,7 +60,7 @@ set listchars=tab:▸\ ,trail:·
 map <silent> <leader>sl :set relativenumber<CR>:set list<CR>
 map <silent> <leader>nl :set norelativenumber<CR>:set nolist<CR>
 
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :nohlsearch<cr>
 
 highlight CursorLine ctermbg=008 cterm=NONE
 

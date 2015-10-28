@@ -27,6 +27,11 @@ nnoremap <C-T> :tabnew<CR>
 nnoremap <F3> gT
 nnoremap <F4> gt
 
+" highlight last inserted text
+nnoremap gV `[v`]
+
+" save session
+nnoremap <leader>s :mksession<CR>
 
 set backspace=indent,eol,start
 
