@@ -38,6 +38,7 @@
 [push]
 #  default = simple
 
+# just type git clone gh://andk/cpanpm
 [url "ssh://git@github.com/"]
   insteadOf = gh://
 
