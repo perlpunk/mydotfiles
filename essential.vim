@@ -11,7 +11,16 @@ nnoremap <c-h> <c-w>h<c-w><Esc>
 
 " no more $VAR1 in the logfile without knowing where it comes from
 " type $varname<leader>D or @varname<leader>D, ... 
-imap <leader>D <ESC>^iwarn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\<ESC>llyw$a], ['<ESC>pa']);<ESC>
+imap <leader>DD <ESC>^iwarn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\<ESC>llyw$a], ['<ESC>pa']);<ESC>
+
+" Debugging
+imap <leader>DE warn __PACKAGE__.':'.__LINE__.": \n";<ESC>hhhi
+
+" save
+" CTRL-C
+nnoremap <C-C> :w<CR>
+" same in insert mode
+imap <C-C> <ESC>:w<CR>
 
 " paste
 set pastetoggle=<F10>

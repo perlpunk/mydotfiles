@@ -1,14 +1,8 @@
 " reload vimrc
-nnoremap <C-J> :source ~/.vimrc<CR>
+nnoremap <leader>R :source ~/.vimrc<CR>
 
 " leave vim
 nnoremap Q :q<CR>
-
-" save
-" CTRL-C
-nnoremap <C-C> :w<CR>
-" same in insert mode
-imap <C-C> <ESC>:w<CR>
 
 " indent lines
 vmap <tab> >gv
