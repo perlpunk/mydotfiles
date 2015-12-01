@@ -45,6 +45,8 @@
 # add parts of files
 # git add -p ...
 
+# git diff --word-diff
+
 # git log --date=relative
 
 # alias myclone="git clone --config user.email 'foo@example.org'"
