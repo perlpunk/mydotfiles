@@ -9,7 +9,7 @@ set foldlevelstart=1
 map <F6> !perltidy -q<CR>
 
 
-highlight comments ctermfg=darkgrey
+highlight comments ctermfg=grey
 :au BufNewFile,BufRead *.p? :2match comments /^ *warn __PACKAGE__.*/
 
 
