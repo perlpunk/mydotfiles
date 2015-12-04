@@ -47,3 +47,5 @@ set wildmode=list:longest,full
 
 autocmd FileType perl setlocal commentstring=#%s
 
+" git rebase -i: replace pick with squash
+noremap <leader>sq ^cwsquash<ESC>j^
