@@ -14,7 +14,7 @@ map <s-tab> <<
 nnoremap gV `[v`]
 
 " save session
-nnoremap <leader>s :mksession<CR>
+nnoremap <leader>S :mksession<CR>
 
 set backspace=indent,eol,start
 
@@ -45,7 +45,5 @@ set wildmenu
 set wildignorecase
 set wildmode=list:longest,full
 
-autocmd FileType perl setlocal commentstring=#%s
-
 " git rebase -i: replace pick with squash
-noremap <leader>sq ^cwsquash<ESC>j^
+autocmd FileType gitrebase noremap <leader>sq ^cwsquash<ESC>j^

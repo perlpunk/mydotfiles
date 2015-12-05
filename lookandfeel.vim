@@ -4,7 +4,6 @@ set ruler
 set statusline=[%02n]%*\ %2*%F%*\ (%M)b:%b\ %=%3*<%l,%c%V>%*
 set laststatus=2
 
-syntax on
 set autoindent
 
 set et

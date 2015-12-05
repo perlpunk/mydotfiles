@@ -1,7 +1,9 @@
 " without these I won't be productive
 
+syntax on
+
 " edit file in same directory
-map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " use ctrl-h,j,k,l to jump between splits
 nnoremap <c-j> <c-w>j<c-w><Esc>
@@ -14,13 +16,13 @@ nnoremap <c-h> <c-w>h<c-w><Esc>
 inoremap <leader>DD <ESC>^iwarn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\<ESC>llyw$a], ['<ESC>pa']);<ESC>
 
 " Debugging
-imap <leader>DE warn __PACKAGE__.':'.__LINE__.": \n";<ESC>hhhi
+inoremap <leader>DE warn __PACKAGE__.':'.__LINE__.": \n";<ESC>hhhi
 
 " save
 " CTRL-C
 nnoremap <C-C> :w<CR>
 " same in insert mode
-imap <C-C> <ESC>:w<CR>
+inoremap <C-C> <ESC>:w<CR>
 
 " paste
 set pastetoggle=<F10>

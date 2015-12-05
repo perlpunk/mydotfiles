@@ -12,5 +12,7 @@ map <F6> !perltidy -q<CR>
 highlight comments ctermfg=grey
 :au BufNewFile,BufRead *.p? :2match comments /^ *warn __PACKAGE__.*/
 
+autocmd FileType perl setlocal commentstring=#%s
+
 
 
