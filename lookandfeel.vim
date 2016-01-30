@@ -19,6 +19,8 @@ set modeline
 set incsearch
 " highlight search
 set hls
+" Case sensitive when uc present
+set smartcase
 
 " where am I
 set cursorline
@@ -29,7 +31,7 @@ set textwidth=80
 set colorcolumn=80
 
 set t_Co=256
-highlight Normal ctermbg=black
+"highlight Normal ctermbg=black
 hi  ColorColumn  ctermbg=17 " dark blue
 
 set scrolloff=3
@@ -61,7 +63,8 @@ map <silent> <leader>nl :set norelativenumber<CR>:set nolist<CR>
 
 nnoremap <leader><space> :nohlsearch<cr>
 
-highlight CursorLine ctermbg=008 cterm=NONE
+"highlight CursorLine ctermbg=008 cterm=NONE
+highlight Visual ctermbg=008
 
 set termencoding=utf-8
 set encoding=utf-8
