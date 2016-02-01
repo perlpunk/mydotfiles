@@ -17,7 +17,7 @@
   st = status -sb
   co = checkout
   lp = log -p
-  glog = log --graph --decorate --all
+  glog = log --graph --decorate --branches=* --remotes=*
   br = branch
   # commit count by author
   who = shortlog -s -n
@@ -28,7 +28,8 @@
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]\\ %Creset%ad" --decorate --numstat
   lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
-  lga = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph --all
+  lga = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]\\ [%an]" --decorate --date=short --graph --branches=* --remotes=*
+  l = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph --branches=* --remotes=* -20
   lg = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph
   ld = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=relative
   le = log --oneline --decorate
