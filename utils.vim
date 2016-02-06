@@ -47,3 +47,6 @@ set wildmode=list:longest,full
 
 " git rebase -i: replace pick with squash
 autocmd FileType gitrebase noremap <leader>sq ^cwsquash<ESC>j^
+
+" get a diff since the last save
+noremap <leader>wd :w !diff % -<CR>
