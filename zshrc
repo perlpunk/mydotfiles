@@ -102,3 +102,8 @@ for c in cp rm chmod chown rename; do
 done
 
 alias -g L="|less"
+
+mkcd () {
+    mkdir -p "$1" && cd "$1"
+}
+
