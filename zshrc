@@ -107,3 +107,8 @@ mkcd () {
     mkdir -p "$1" && cd "$1"
 }
 
+wetter() {
+    local city=$1
+    [[ -z $city ]] && city=berlin
+    curl "http://wttr.in/$city"
+}
