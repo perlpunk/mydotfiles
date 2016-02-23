@@ -112,3 +112,27 @@ wetter() {
     [[ -z $city ]] && city=berlin
     curl "http://wttr.in/$city"
 }
+
+# sometimes you want to go forward/backword/kill words including
+# non alpha numeric, sometimes only alpha numeric
+autoload -U select-word-style
+select-word-style bash
+
+zle -N kai-backward-kill-word backward-kill-word-match
+zle -N kai-backward-word backward-word-match
+zle -N kai-forward-word forward-word-match
+zle -N kai-kill-word kill-word-match
+zle -N kai-transpose-words transpose-words-match
+
+zstyle ':zle:kai-backward-kill-word(:*|)' word-style shell
+zstyle ':zle:kai-backward-word(:*|)' word-style shell
+zstyle ':zle:kai-forward-word(:*|)' word-style shell
+zstyle ':zle:kai-kill-word(:*|)' word-style shell
+zstyle ':zle:kai-transpose-words(:*|)' word-style shell
+
+bindkey "\eD" kai-kill-word
+bindkey "\eW" kai-backward-kill-word
+bindkey "\eF" kai-forward-word
+bindkey "\eB" kai-backward-word
+bindkey "\eT" kai-transpose-words
+
