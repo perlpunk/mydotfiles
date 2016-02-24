@@ -24,6 +24,7 @@
   graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
   # ovid++
   stashed = "stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
+  sl = "stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
   brv = "branch -avv"
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]\\ %Creset%ad" --decorate --numstat
@@ -36,6 +37,11 @@
   f = "!git ls-files | grep -i"
   la = "!git config -l | grep alias | cut -c 7-"
   rv = "remote -v"
+  ds = "diff --staged"
+  dw = "diff --word-diff=color"
+  ss = "stash save"
+  simplified = "log --graph --simplify-by-decoration --oneline"
+  latestbranches = "for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'"
 
 [push]
 #  default = simple
@@ -57,3 +63,17 @@
 # git config --global core.pager 'less -r'
 
 # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+
+# https://ochronus.com/git-tips-from-the-trenches/
+
+# $ git blame -w  # ignores white space
+# git blame -M  # ignores moving text
+# git blame -C  # ignores moving text into other files
+
+# checkout a file from another branch
+# git checkout <OTHER_BRANCH> -- path/to/file
+
+# git pull --rebase
+
+# git cherry -v master
+
