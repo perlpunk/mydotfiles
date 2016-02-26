@@ -1,4 +1,4 @@
-HISTFILE=~/.zsh_history
+HISTFILE=~/configs/zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
 setopt histignorealldups
@@ -136,3 +136,4 @@ bindkey "\eF" kai-forward-word
 bindkey "\eB" kai-backward-word
 bindkey "\eT" kai-transpose-words
 
+alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"

@@ -42,6 +42,8 @@
   ss = "stash save"
   simplified = "log --graph --simplify-by-decoration --oneline"
   latestbranches = "for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'"
+  pullff = "pull --ff-only"
+  pullrb = "pull --rebase"
 
 [push]
 #  default = simple
