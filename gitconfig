@@ -30,7 +30,7 @@
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]\\ %Creset%ad" --decorate --numstat
   lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
   lga = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]\\ [%an]" --decorate --date=short --graph --branches=* --remotes=*
-  l = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph --branches=* --remotes=* -20
+  l = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%an]" --decorate --date=short --graph --branches=* --remotes=* -20
   lg = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph
   ld = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=relative
   le = log --oneline --decorate
