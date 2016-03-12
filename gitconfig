@@ -15,6 +15,7 @@
   di = diff
   last = log -1 HEAD
   st = status -sb
+  sti = status -sb --ignored
   co = checkout
   lp = log -p
   glog = log --graph --decorate --branches=* --remotes=*
