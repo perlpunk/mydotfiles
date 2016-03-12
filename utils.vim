@@ -50,3 +50,5 @@ autocmd FileType gitrebase noremap <leader>sq ^cwsquash<ESC>j^
 
 " get a diff since the last save
 noremap <leader>wd :w !diff % -<CR>
+
+noremap <leader>S  :%s//gc<LEFT><LEFT><LEFT>
