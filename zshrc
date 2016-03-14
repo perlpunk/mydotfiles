@@ -113,6 +113,9 @@ wetter() {
     curl "http://wttr.in/$city"
 }
 
+alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
+
+# thanks andk
 # sometimes you want to go forward/backword/kill words including
 # non alpha numeric, sometimes only alpha numeric
 autoload -U select-word-style
@@ -136,4 +139,13 @@ bindkey "\eF" kai-forward-word
 bindkey "\eB" kai-backward-word
 bindkey "\eT" kai-transpose-words
 
-alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
+export LESS='-RMQcfi -j9 -X -P line %lt (of %L) of %f'
+setopt AUTO_PUSHD
+setopt HIST_IGNORE_SPACE
+setopt INTERACTIVE_COMMENTS
+setopt LIST_TYPES
+setopt PRINT_EXIT_VALUE
+setopt PUSHD_IGNORE_DUPS
+
+
+
