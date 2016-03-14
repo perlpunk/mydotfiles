@@ -36,6 +36,7 @@ zstyle ':completion:*:hosts' hosts $_ssh_config
 PERLBREW_PROMPT='${PERLBREW_PERL:+[$PERLBREW_PERL]}'
 THE_COLOR="[1;31m"
 PS1=$'%{\e'$THE_COLOR$'%}'%n@%m:%~'`_vc_prompt`'%#$'%{\e[0m%} '
+PS1=$'%{$fg_bold[cyan]%}'%n@%m:%~'`_vc_prompt`'%#$'%{\e[0m%} '
 #PROMPT="\$(git branch 2>/dev/null |sed 's@^\* \(.\+\)@[\1] @;tn;d;:n')\${PERLBREW_PERL:+[\$PERLBREW_PERL] }%n@%m% :%~$ "
 # colored
 #PROMPT="%F{blue}%B%K{blue}█▓▒░%F{white}%K{blue}%B%n@%m%b%F{blue}%K{black}█▓▒░%F{white}%K{black}%B%}%K{black}:%B%~$ %b%k%f"
