@@ -101,7 +101,8 @@ for c in cp rm chmod chown rename; do
     alias $c="$c -v"
 done
 
-alias -g L="|less"
+alias -g L="| less"
+alias -g C="| wc -l"
 
 mkcd () {
     mkdir -p "$1" && cd "$1"
@@ -114,6 +115,17 @@ wetter() {
 }
 
 alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
+
+# http://chneukirchen.org/blog/archive/2008/02/10-zsh-tricks-you-may-not-know.html
+# http://chneukirchen.org/blog/archive/2011/02/10-more-zsh-tricks-you-may-not-know.html
+# http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
+# meta-' quotes line
+# meta-q allow interim command
+# cd search replace
+# echo =perl
+# meta-return inserts newlines
+
+alias ..='cd ..'
 
 # thanks andk
 # sometimes you want to go forward/backword/kill words including
