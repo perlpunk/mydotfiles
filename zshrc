@@ -152,7 +152,7 @@ bindkey "\eF" kai-forward-word
 bindkey "\eB" kai-backward-word
 bindkey "\eT" kai-transpose-words
 
-export LESS='-RMQcfi -j9 -X -P line %lt (of %L) of %f'
+#export LESS='-RMQcfi -j9 -X -P line %lt (of %L) of %f'
 setopt AUTO_PUSHD
 setopt HIST_IGNORE_SPACE
 setopt INTERACTIVE_COMMENTS

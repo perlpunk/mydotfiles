@@ -52,3 +52,6 @@ autocmd FileType gitrebase noremap <leader>sq ^cwsquash<ESC>j^
 noremap <leader>wd :w !diff % -<CR>
 
 noremap <leader>S  :%s//gc<LEFT><LEFT><LEFT>
+
+au BufNewFile,BufRead Makefile set noet
+au BufNewFile,BufRead *.pl,*.pm,*.t set et
