@@ -45,6 +45,8 @@
   latestbranches = "for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'"
   pullff = "pull --ff-only"
   pullrb = "pull --rebase"
+  rbi = "rebase -i"
+  rbm = "rebase master"
 
 [push]
 #  default = simple

@@ -15,4 +15,6 @@ highlight comments ctermfg=grey
 autocmd FileType perl setlocal commentstring=#%s
 
 
-
+" go to Test::More line to increase/decrease test count.
+" go back with `t
+noremap <leader>tt mt/tests => <CR>2w:noh<CR>
