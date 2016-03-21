@@ -161,4 +161,5 @@ setopt PRINT_EXIT_VALUE
 setopt PUSHD_IGNORE_DUPS
 
 
-
+alias apts="aptitude search"
+alias apti="sudo aptitude install"
