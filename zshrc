@@ -157,9 +157,11 @@ setopt AUTO_PUSHD
 setopt HIST_IGNORE_SPACE
 setopt INTERACTIVE_COMMENTS
 setopt LIST_TYPES
-setopt PRINT_EXIT_VALUE
+#setopt PRINT_EXIT_VALUE
 setopt PUSHD_IGNORE_DUPS
 
 
 alias apts="aptitude search"
 alias apti="sudo aptitude install"
+
+if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
