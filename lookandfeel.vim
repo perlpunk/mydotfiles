@@ -33,6 +33,7 @@ set colorcolumn=80
 set t_Co=256
 "highlight Normal ctermbg=black
 hi  ColorColumn  ctermbg=17 " dark blue
+set bg=dark
 
 set scrolloff=3
 
