@@ -22,6 +22,7 @@ promptinit
 
 # display menu when using completion
 zstyle ':completion:*' menu select
+zstyle ':completion:*' use-cache on
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
