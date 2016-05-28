@@ -45,8 +45,9 @@ set wildmenu
 set wildignorecase
 set wildmode=list:longest,full
 
-" git rebase -i: replace pick with squash
+" git rebase -i: replace pick with squash/fixup
 autocmd FileType gitrebase noremap <leader>sq ^cwsquash<ESC>j^
+autocmd FileType gitrebase noremap <leader>fx ^cwfixup<ESC>j^
 
 " get a diff since the last save
 noremap <leader>wd :w !diff % -<CR>
