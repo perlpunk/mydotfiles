@@ -49,6 +49,10 @@ set wildmode=list:longest,full
 autocmd FileType gitrebase noremap <leader>sq ^cwsquash<ESC>j^
 autocmd FileType gitrebase noremap <leader>fx ^cwfixup<ESC>j^
 
+" open explorer
+let g:netrw_liststyle=3
+map <leader>k :E<cr>
+
 " get a diff since the last save
 noremap <leader>wd :w !diff % -<CR>
 
