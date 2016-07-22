@@ -1,0 +1,5 @@
+setw -g window-active-style "bg=black"
+setw -g window-style "bg=#330000"
+
+bind m set -g mouse on
+bind M set -g mouse off
