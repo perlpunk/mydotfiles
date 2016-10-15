@@ -20,6 +20,14 @@ compinit
 autoload -Uz promptinit
 promptinit
 
+# ctrl-x ctrl-e to edit current cmdline like in bash
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+# comment current line (or uncomment)
+bindkey '\e#' vi-pound-insert
+
 # display menu when using completion
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache on
@@ -166,3 +174,14 @@ alias apts="aptitude search"
 alias apti="sudo aptitude install"
 
 if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
+
+#### notes
+# C-_ or C-x C-u
+# incremental undo for current cmdline
+# C-x C-x
+# go to beginning of line, whether in tmux or not
+# C-x C-b match bracket
+# esc-' esc-" quote the current line/region
+# esc-x execute-named-cmd
+# esc-z Redo the last function executed with execute-named-cmd
+# man zshzle
