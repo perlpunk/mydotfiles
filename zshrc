@@ -50,10 +50,13 @@ PS1=$'%{$fg_bold[cyan]%}'%n@%m:%~'`_vc_prompt`'%#$'%{\e[0m%} '
 # colored
 #PROMPT="%F{blue}%B%K{blue}█▓▒░%F{white}%K{blue}%B%n@%m%b%F{blue}%K{black}█▓▒░%F{white}%K{black}%B%}%K{black}:%B%~$ %b%k%f"
 function get_nr_jobs() {
-  jobs | grep '^\[' | wc -l
+  local num="$(jobs | grep '^\[' | wc -l)"
+  if [[ $num -gt 0 ]]; then
+    echo "[$num]"
+  fi
 }
 
-RPROMPT="%{$fg_bold[cyan]%}$PERLBREW_PROMPT"'%{$fg_bold[red]%}[$(get_nr_jobs)] %{$fg_bold[green]%}%*%{$reset_color%}'
+RPROMPT="%{$fg[cyan]%}$PERLBREW_PROMPT%{$reset_color%}"'%{$fg[red]%}$(get_nr_jobs) %{$fg[green]%}%*%{$reset_color%}'
 
 
 # thanks to ANDK
