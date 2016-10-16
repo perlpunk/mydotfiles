@@ -175,6 +175,7 @@ setopt PUSHD_IGNORE_DUPS
 
 alias apts="aptitude search"
 alias apti="sudo aptitude install"
+alias tc="tree -C"
 
 if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
 
