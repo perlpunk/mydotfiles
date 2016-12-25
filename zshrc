@@ -179,6 +179,10 @@ alias tc="tree -C"
 
 if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
 
+if command -v most > /dev/null 2>&1; then
+    export PAGER="most"
+fi
+
 #### notes
 # C-_ or C-x C-u
 # incremental undo for current cmdline
