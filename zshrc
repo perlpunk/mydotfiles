@@ -180,7 +180,8 @@ alias tc="tree -C"
 if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
 
 if command -v most > /dev/null 2>&1; then
-    export PAGER="most"
+    alias man="PAGER=most man"
+    alias perldoc="PAGER=most perldoc"
 fi
 
 #### notes
