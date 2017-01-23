@@ -1,0 +1,30 @@
+
+alias dh='dirs -v'
+alias ltr='ls -ltr'
+alias ls='ls --color'
+alias l='ls -lh'
+alias ll='ls -la'
+
+for c in cp rm chmod chown rename; do
+    alias $c="$c -v"
+done
+
+alias -g L="| less"
+alias -g C="| wc -l"
+
+alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
+
+alias ..='cd ..'
+
+alias apts="aptitude search"
+alias apti="sudo aptitude install"
+alias tc="tree -C"
+
+if command -v most > /dev/null 2>&1; then
+    alias man="PAGER=most man"
+    alias perldoc="PAGER=most perldoc"
+fi
+
+alias RM="rm -rf"
+alias gst="git st"
+alias gd="git di"

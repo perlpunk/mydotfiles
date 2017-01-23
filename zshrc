@@ -6,7 +6,6 @@ setopt EXTENDED_HISTORY
 unsetopt SHARE_HISTORY
 setopt appendhistory autocd notify promptsubst
 unsetopt beep extendedglob nomatch
-alias dh='dirs -v'
 DIRSTACKSIZE=20
 setopt AUTOPUSHD
 
@@ -105,18 +104,6 @@ expand-or-complete-with-dots() {
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
-alias alias ltr='ls -ltr'
-alias ls='ls --color'
-alias l='ls -lh'
-alias ll='ls -la'
-
-for c in cp rm chmod chown rename; do
-    alias $c="$c -v"
-done
-
-alias -g L="| less"
-alias -g C="| wc -l"
-
 mkcd () {
     mkdir -p "$1" && cd "$1"
 }
@@ -127,7 +114,6 @@ wetter() {
     curl "http://wttr.in/$city"
 }
 
-alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
 
 # http://chneukirchen.org/blog/archive/2008/02/10-zsh-tricks-you-may-not-know.html
 # http://chneukirchen.org/blog/archive/2011/02/10-more-zsh-tricks-you-may-not-know.html
@@ -138,7 +124,6 @@ alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
 # echo =perl
 # meta-return inserts newlines
 
-alias ..='cd ..'
 
 # thanks andk
 # sometimes you want to go forward/backword/kill words including
@@ -173,16 +158,8 @@ setopt LIST_TYPES
 setopt PUSHD_IGNORE_DUPS
 
 
-alias apts="aptitude search"
-alias apti="sudo aptitude install"
-alias tc="tree -C"
 
 if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
-
-if command -v most > /dev/null 2>&1; then
-    alias man="PAGER=most man"
-    alias perldoc="PAGER=most perldoc"
-fi
 
 #### notes
 # C-_ or C-x C-u
@@ -194,3 +171,4 @@ fi
 # esc-x execute-named-cmd
 # esc-z Redo the last function executed with execute-named-cmd
 # man zshzle
+
