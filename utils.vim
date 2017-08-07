@@ -60,3 +60,5 @@ noremap <leader>S  :%s//gc<LEFT><LEFT><LEFT>
 
 au BufNewFile,BufRead Makefile set noet
 au BufNewFile,BufRead *.pl,*.pm,*.t set et
+
+noremap <leader>date :r !date --rfc-3339=seconds
