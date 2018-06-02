@@ -37,8 +37,8 @@
   f = "!git ls-files | grep -i"
   la = "!git config -l | grep alias | cut -c 7-"
   rv = "remote -v"
-  ds = "diff --staged"
-  dw = "diff --word-diff=color"
+  diffs = "diff --staged"
+  diffw = "diff --word-diff=color"
   ss = "stash save"
   simplified = "log --graph --simplify-by-decoration --oneline"
   latestbranches = "for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'"
@@ -46,6 +46,7 @@
   pullrb = "pull --rebase"
   rbi = "rebase -i"
   rbm = "rebase master"
+  pushfl = "push --force-with-lease"
 
 [push]
 #  default = simple
