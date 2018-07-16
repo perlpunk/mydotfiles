@@ -63,7 +63,7 @@ _vc_prompt () {
     local GITDIRTY
     local GITPROMPT
     local GITSTATUS
-    if [ -d .git -o -d ../.git -o -d ../../.git -o -d ../../../.git ] ; then
+    if [ -f .git -o -f ../.git -o -f ../../.git -o -f ../../../.git ] ; then
         if GITBRANCH=`git branch -a | grep '^\*' | sed 's,\*[ ]*,,'` ; then
             GITSTATUS=`git status --porcelain --untracked-files=no`
             if [ -z $GITSTATUS ] ; then
