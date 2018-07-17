@@ -157,6 +157,10 @@ setopt LIST_TYPES
 #setopt PRINT_EXIT_VALUE
 setopt PUSHD_IGNORE_DUPS
 
+# https://github.com/chubin/cheat.sh
+cheat() {
+    curl "cheat.sh/$1"
+}
 
 
 if [ -n "$TMUX" ]; then TERM=xterm-256color; fi
