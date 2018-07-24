@@ -11,6 +11,7 @@
 
 [alias]
   ci = commit
+  civ = commit -v
   di = diff
   last = log -1 HEAD
   st = status -sb
