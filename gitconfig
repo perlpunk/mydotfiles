@@ -17,6 +17,7 @@
   st = status -sb
   sti = status -sb --ignored
   co = checkout
+  cob = checkout -b
   lp = log -p
   glog = log --graph --decorate --branches=* --remotes=*
   br = branch
