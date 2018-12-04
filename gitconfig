@@ -49,6 +49,7 @@
   rbi = "rebase -i"
   rbm = "rebase master"
   pushfl = "push --force-with-lease"
+  wipcommit = "commit -m WIP"
 
 [push]
 #  default = simple

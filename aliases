@@ -33,3 +33,6 @@ alias gadd="git add"
 # git hub gist-new (public|secret) "description" file1 file2 ...
 alias gist-secret="git hub gist-new secret"
 alias gist-public="git hub gist-new public"
+
+alias xxxcolor="export PERL_XXX_DUMPER=YAML::PP::Highlight"
+alias xxxnocolor="export PERL_XXX_DUMPER=''"
