@@ -1,7 +1,11 @@
 
 alias dh='dirs -v'
 alias ltr='ls -ltr'
-alias ls='ls --color'
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
 alias l='ls -lh'
 alias ll='ls -la'
 
