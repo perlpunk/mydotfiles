@@ -18,6 +18,8 @@ alias ..='cd ..'
 
 alias apts="aptitude search"
 alias apti="sudo aptitude install"
+alias zyps="zypper search"
+alias zypi="sudo zypper install"
 alias tc="tree -C"
 
 if command -v most > /dev/null 2>&1; then
