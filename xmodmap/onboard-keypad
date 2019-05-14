@@ -1,0 +1,22 @@
+! # vim:filetype=xmodmap
+
+clear shift
+keycode  104 = Shift_R Shift_R
+add shift =      Shift_L  Shift_R
+
+keycode  86 = Return Return
+
+! ctrl-k
+keycode 91 = 0x0b
+clear control
+keycode 90 = Control_R Control_R
+add control =    Control_L  Control_R
+
+keycode 82 = BackSpace BackSpace
+
+keycode 80 = Up NoSymbol Up
+keycode 88 = Down NoSymbol Down
+keycode 83 = Left NoSymbol Left
+keycode 85 = Right NoSymbol Right
+keycode 81 = Prior NoSymbol Next
+keycode 89 = Next NoSymbol Next

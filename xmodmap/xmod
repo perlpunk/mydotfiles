@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -x
+
+xmod_dir="$(dirname $0)"
+
+setxkbmap -layout us
+xmodmap $xmod_dir/umlaut-control-caps
+xmodmap $xmod_dir/onboard-keypad
