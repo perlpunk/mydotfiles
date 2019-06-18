@@ -1,6 +1,9 @@
 " reload vimrc
 nnoremap <leader>R :source ~/.vimrc<CR>
 
+set modelines=0
+set nomodeline
+
 " leave vim
 nnoremap Q :q<CR>
 
@@ -60,5 +63,7 @@ noremap <leader>S  :%s//gc<LEFT><LEFT><LEFT>
 
 au BufNewFile,BufRead Makefile set noet
 au BufNewFile,BufRead *.pl,*.pm,*.t set et
+
+au BufNewFile,BufRead *.yaml,*.yml set et | set sts=2 | set sws=2 | set foldmethod=indent
 
 noremap <leader>date :r !date --rfc-3339=seconds
