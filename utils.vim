@@ -45,7 +45,7 @@ let g:netrw_liststyle=1
 nnoremap gb :ls<CR>:b 
 
 set wildmenu
-set wildignorecase
+"set wildignorecase
 set wildmode=list:longest,full
 
 " git rebase -i: replace pick with squash/fixup
