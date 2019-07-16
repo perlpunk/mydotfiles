@@ -23,7 +23,7 @@ set hls
 set smartcase
 
 " where am I
-set cursorline
+"set cursorline
 set ruler
 set showmode
 

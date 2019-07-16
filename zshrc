@@ -23,8 +23,10 @@ promptinit
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-# Arrow-Up goes through each line of multiline commands
-bindkey "^[[A" up-line-or-history
+
+# Arrow-Up/Down goes through each line of multiline commands
+bindkey "^[[A" up-line-or-history # Up
+bindkey "^[[B" down-line-or-history # Down
 
 # comment current line (or uncomment)
 bindkey '\e#' vi-pound-insert
