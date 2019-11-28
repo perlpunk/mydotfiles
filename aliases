@@ -9,8 +9,8 @@ for c in cp rm chmod chown rename; do
     alias $c="$c -v"
 done
 
-alias -g L="| less"
-alias -g C="| wc -l"
+#alias -g L="| less"
+#alias -g C="| wc -l"
 
 alias lh="ls -A --color=never | egrep '^\.' |xargs ls -lad --color=auto"
 
@@ -38,3 +38,6 @@ alias gist-public="git hub gist-new public"
 
 alias xxxcolor="export PERL_XXX_DUMPER=YAML::PP::Highlight"
 alias xxxnocolor="export PERL_XXX_DUMPER=''"
+
+# Remove ANSI color escapes
+alias remcol="sed 's/\x1b\[[0-9;]*m//g'"
