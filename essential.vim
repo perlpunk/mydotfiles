@@ -12,8 +12,13 @@ nnoremap <c-l> <c-w>l<c-w><Esc>
 nnoremap <c-h> <c-w>h<c-w><Esc>
 
 " no more $VAR1 in the logfile without knowing where it comes from
-" type $varname<leader>D or @varname<leader>D, ... 
-inoremap <leader>DD <ESC>^iwarn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\<ESC>llyw$a], ['<ESC>pa']);<ESC>
+" type $varname<leader>DD or @varname<leader>DD, ...
+inoremap <leader>DD <ESC>^iwarn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\<ESC>llywA], ['<ESC>pa']);<ESC>:s/\\\$/$/g<ENTER>
+inoremap <leader>YY <ESC>^iwarn "# ".__PACKAGE__.':'.__LINE__.$".'<ESC>ly2wA'."\n".YAML::PP::Highlight::Dump(\<ESC>pa);<ESC>:s/\\\$/$/g<ENTER>
+
+
+" type $varname\YY
+"inoremap <leader>YY <ESC>^2ywiXXX::YYY('===== \<ESC>A =====', \<ESC>pA);<ESC>:s/\\\$/$/g<ENTER>
 
 " Debugging
 inoremap <leader>DE warn __PACKAGE__.':'.__LINE__.": \n";<ESC>hhhi
@@ -33,5 +38,6 @@ nnoremap <C-T> :tabnew<CR>
 " Change to tab left/right
 nnoremap <F3> gT
 nnoremap <F4> gt
+
 
 
