@@ -1,20 +1,25 @@
 #!/usr/bin/env perl
-use strict;
+use 5.012;
 use warnings;
-use 5.010;
-use YAML::PP::Highlight;
 
 my %data = (
     foo => qr{abc}i,
     sub => sub {
-        say "hello",
+        say "hello";
     },
-    bar => bless [3, 1, 4], 'SomeObject',
+    bar => bless { numbers => [3, 1, 4] }, 'SomeObject',
 );
 
-my $data = 'string';
+my $multiline = <<"EOM";
+multiline
+text
+with trailing  
+spaces
+EOM
 
+my $tabs = "string\twith\ttabs";
 
-warn "# ".__PACKAGE__.':'.__LINE__.$".'$data'."\n".YAML::PP::Highlight::Dump($data);
+#warn "# ".__PACKAGE__.':'.__LINE__.$".'$multiline'."\n".YAML::PP::Highlight::Dump($multiline);
+#warn "# ".__PACKAGE__.':'.__LINE__.$".'$tabs'."\n".YAML::PP::Highlight::Dump($tabs);
 warn "# ".__PACKAGE__.':'.__LINE__.$".'%data'."\n".YAML::PP::Highlight::Dump(\%data);
 
