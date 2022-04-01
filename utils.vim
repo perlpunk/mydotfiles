@@ -23,7 +23,7 @@ set backspace=indent,eol,start
 
 " https://github.com/perlpunk/yamltidy
 "Type \yt to tidy the whole buffer
-:noremap <leader>yt ggvG:!yamltidy -<CR>
+:noremap <leader>yt :%!yamltidy -<CR>
 "Visually select lines and type <leader>yt. The first level of indentation
 " spaces will be kept.
 :vnoremap \yt :!yamltidy --partial -<CR>
