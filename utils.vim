@@ -23,10 +23,16 @@ set backspace=indent,eol,start
 
 " https://github.com/perlpunk/yamltidy
 "Type \yt to tidy the whole buffer
-:noremap <leader>yt :%!yamltidy -<CR>
+noremap <leader>yt :%!yamltidy -<CR>
 "Visually select lines and type <leader>yt. The first level of indentation
 " spaces will be kept.
-:vnoremap \yt :!yamltidy --partial -<CR>
+vnoremap <leader>yt :!yamltidy --partial -<CR>
+
+" Highlight YAML
+" Type \yh to highlight the current buffer content
+noremap <leader>yh :w !yamlpp-highlight<CR>
+" Visually select lines and type \yh to highlight those lines
+vnoremap <leader>yh :w !yamlpp-highlight<CR>
 
 " ----- git -----
 " Get the commit responsible for the current line
