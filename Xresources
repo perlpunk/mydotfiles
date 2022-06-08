@@ -1,4 +1,7 @@
 URxvt.perl-ext-common: tabbed,url-select,clipboard,fullscreen
+!! blue dark/light
+*color4: #068bcc
+*color12: #40b0cc
 
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
