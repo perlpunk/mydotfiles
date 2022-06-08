@@ -41,3 +41,5 @@ alias xxxnocolor="export PERL_XXX_DUMPER=''"
 
 # Remove ANSI color escapes
 alias remcol="sed 's/\x1b\[[0-9;]*m//g'"
+
+alias jsontoprettyyaml="yamlpp-load-dump --preserve 0 | yamlpp-highlight"
