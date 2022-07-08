@@ -50,6 +50,7 @@
   rbm = "rebase master"
   pushfl = "push --force-with-lease"
   wipcommit = "commit -m WIP"
+  addsafe = config --global --add safe.directory
 
 [push]
 #  default = simple
