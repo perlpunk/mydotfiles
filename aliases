@@ -43,3 +43,31 @@ alias xxxnocolor="export PERL_XXX_DUMPER=''"
 alias remcol="sed 's/\x1b\[[0-9;]*m//g'"
 
 alias jsontoprettyyaml="yamlpp-load-dump --preserve 0 | yamlpp-highlight"
+git-default-origin() {
+    local remote_branch=$(git-default-branch-name)
+    echo "${remote_branch%%/*}"
+}
+git-default-branch-name() {
+    git branch -a | grep /HEAD | sed -e 's/.* //'
+}
+alias gitdb="git-default-branch-name"
+git-rebase-head() {
+    local remote_branch=$(git-default-branch-name)
+    local br=${remote_branch##*/}
+    git checkout $br && git rebase $remote_branch && git checkout -
+}
+alias grh="git-rebase-head"
+
+git-fetch-origin() {
+    local or=$(git-default-origin)
+    echo "git fetch $or..."
+    git fetch "$or"
+}
+alias gfo="git-fetch-origin"
+git-checkout-default() {
+    local remote_branch=$(git-default-branch-name)
+    local br=${remote_branch##*/}
+    git checkout $br
+}
+alias gcd="git-checkout-default"
+alias gc-="git checkout -"
